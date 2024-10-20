@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RemittanceFormComponent } from './remittance-form/remittance-form.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+selector: 'app-root',
+standalone: true,
+templateUrl: './app.component.html',
+styleUrls: ['./app.component.css'],
+imports: [RemittanceFormComponent] // Import RemittanceFormComponent here
 })
 export class AppComponent {
-  title = 'frontEnd';
+title = 'Remittance App';
 }
