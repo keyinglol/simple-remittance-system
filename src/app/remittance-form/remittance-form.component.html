@@ -1,0 +1,31 @@
+<div class="form-container">
+  <h1>Remittance Form</h1>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="receiverCountry">Receiver Country:</label>
+      <select id="receiverCountry" formControlName="receiverCountry">
+        <option value="" disabled>Select Country</option>
+        <!-- Loop through the countries array and display each country -->
+        <option *ngFor="let country of countries" [value]="country.code">{{ country.name }}</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="paymentType">Payment Type:</label>
+      <select id="paymentType" formControlName="paymentType">
+        <option value="" disabled>Select Payment Type</option>
+        <option *ngFor="let type of paymentTypes" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="amount">Amount:</label>
+      <input id="amount" formControlName="amount" type="number" placeholder="Enter Amount" />
+    </div>
+
+    <div>
+      <button type="submit" [disabled]="form.invalid">Submit</button>
+    </div>
+  </form>
+</div>
